@@ -101,27 +101,48 @@ footer {
     border-radius: 8px;
 }
 
-/* Customizing BibBase to match QuAINt Lab */
+/* BibBase Menu Styling */
 #bibbase_header {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+#bibbase_header ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#bibbase_header ul li {
+    display: inline;
+}
+
+#bibbase_header a {
+    text-decoration: none;
+    color: var(--columbia-dark-blue);
+    font-weight: 600;
+    padding: 5px 10px;
+    border: 1px solid var(--columbia-blue);
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+#bibbase_header a:hover {
+    background-color: white;
+    color: #002D62;
+}
+
+.bibbase_paper {
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
-.bibbase_group_title {
-    color: var(--columbia-dark-blue) !important;
-    border-bottom: 2px solid var(--columbia-blue);
-    padding-bottom: 5px;
-    margin-top: 30px !important;
-}
-
-.bibbase_paper_title {
-    font-weight: bold;
-    color: #333;
-}
-
-/* Style the filter links */
 .bibbase_group_by a {
     color: var(--columbia-dark-blue);
     text-decoration: none;
     font-weight: 600;
     margin-right: 10px;
 }
+
