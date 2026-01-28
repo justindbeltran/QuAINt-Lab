@@ -100,3 +100,28 @@ footer {
     padding: 1rem;
     border-radius: 8px;
 }
+
+/* Customizing BibBase to match QuAINt Lab */
+#bibbase_header {
+    margin-bottom: 20px;
+}
+
+.bibbase_group_title {
+    color: var(--columbia-dark-blue) !important;
+    border-bottom: 2px solid var(--columbia-blue);
+    padding-bottom: 5px;
+    margin-top: 30px !important;
+}
+
+.bibbase_paper_title {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style the filter links */
+.bibbase_group_by a {
+    color: var(--columbia-dark-blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 10px;
+}
