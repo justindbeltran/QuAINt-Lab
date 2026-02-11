@@ -1,3 +1,8 @@
+:root {
+    --columbia-blue: #ADCBE3; /* Light blue for borders/hover */
+    --columbia-dark-blue: #002D62; /* Dark blue for text/backgrounds */
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -14,7 +19,7 @@ body {
 
 /* Columbia Brand Bar (Across all pages) */
 .brand-bar {
-    background-color: var(--columbia-dark-blue);
+    background-color: var(--columbia-blue);
     padding: 10px 0;
     width: 100%;
 }
@@ -65,7 +70,6 @@ nav a:hover {
 .container {
     max-width: 1000px;
     margin: 2rem auto;
-    padding: 0 2rem;
     background: white;
     padding: 3rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -105,18 +109,11 @@ footer {
 #bibbase_header {
     margin-bottom: 30px;
     font-size: 0.9rem;
-}
-
-#bibbase_header ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
+    /* Apply flex directly to the header container */
+    display: flex; 
     flex-wrap: wrap;
     gap: 15px;
-}
-
-#bibbase_header ul li {
-    display: inline;
+    align-items: center;
 }
 
 #bibbase_header a {
@@ -127,11 +124,12 @@ footer {
     border: 1px solid var(--columbia-blue);
     border-radius: 4px;
     transition: background 0.3s;
+    cursor: pointer; /* Ensures it looks clickable */
 }
 
 #bibbase_header a:hover {
-    background-color: white;
-    color: #002D62;
+    background-color: var(--columbia-dark-blue); /* Invert colors on hover */
+    color: white;
 }
 
 .bibbase_paper {
