@@ -10,7 +10,7 @@
 
 <div class="brand-bar">
     <div class="inner-container">
-        <img src="images/columbia_logo.png" alt="Columbia University Logo">
+         <img src="images/columbia_logo.png" alt="Columbia University Logo" onerror="this.style.display='none'">
     </div>
 </div>
 
@@ -26,20 +26,61 @@
 </header>
 
 <div class="container">
-    <h1> Prior Presentations </h1>
+    <h1>Prior Presentations</h1>
     <section>
-        <div class="grid">
-            <div class="card">
-                <h3> Presentation 1 </h3>
-                <p></p>
-            </div>
-        </div>
+        <div class="grid" id="presentation-grid"></div>
     </section>
 </div>
 
 <footer>
     &copy; 2026 QuAINt Lab - Columbia University. All rights reserved.
 </footer>
+
+<script src="presentations.js"></script>
+
+<script>
+    const gridContainer = document.getElementById('presentation-grid');
+
+    presentations.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        let previewHTML = '';
+
+        if (item.type === 'PDF') {
+            previewHTML = `
+                <object data="${item.url}" type="application/pdf">
+                    <div class="no-preview">
+                        <span>📄</span>
+                        <p>Preview not available.<br>Click download to view.</p>
+                    </div>
+                </object>
+            `;
+        } else {
+            previewHTML = `
+                <div class="no-preview">
+                    <span>📊</span>
+                    <p><strong>${item.type} File</strong><br>Convert to PDF to see preview<br>or download below.</p>
+                </div>
+            `;
+        }
+
+        card.innerHTML = `
+            <div class="card-preview">
+                ${previewHTML}
+            </div>
+            <div class="card-content">
+                <div>
+                    <h3>${item.title}</h3>
+                    <p class="author">${item.author}</p>
+                </div>
+                <a href="${item.url}" class="btn">Download ${item.type}</a>
+            </div>
+        `;
+
+        gridContainer.appendChild(card);
+    });
+</script>
 
 </body>
 </html>
